@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-image: url('/static/wallpaper3.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        
+        .form-container {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            width: 420px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        label {
+            display: block;
+            margin: 15px 0 7px;
+            color: #34495e;
+            font-weight: 600;
+            font-size: 14px;
+            text-align: left;
+        }
+        
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #bdc3c7;
+            border-radius: 8px;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.95);
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        input[type="number"]:focus {
+            border-color: #3498db;
+            box-shadow: inset 0 2px 5px rgba(52, 152, 219, 0.5);
+        }
+        
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s ease;
+        }
+        
+        button:hover {
+            background: linear-gradient(90deg, #2980b9, #27ae60);
+        }
+        
+        .logout {
+            display: block;
+            margin-top: 25px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        .logout:hover {
+            color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>Crop Prediction System for Farmers</h1>
+        <form action="{{ url_for('predict') }}" method="post">
+            <label for="nitrogen">Nitrogen:</label>
+            <input type="number" id="nitrogen" name="nitrogen" step="any" required>
+
+            <label for="phosphorus">Phosphorus:</label>
+            <input type="number" id="phosphorus" name="phosphorus" step="any" required>
+
+            <label for="potassium">Potassium:</label>
+            <input type="number" id="potassium" name="potassium" step="any" required>
+
+            <label for="temperature">Temperature (°C):</label>
+            <input type="number" id="temperature" name="temperature" step="any" required>
+
+            <label for="humidity">Humidity (%):</label>
+            <input type="number" id="humidity" name="humidity" step="any" required>
+
+            <label for="ph">pH:</label>
+            <input type="number" id="ph" name="ph" step="any" required>
+
+            <label for="rainfall">Rainfall (mm):</label>
+            <input type="number" id="rainfall" name="rainfall" step="any" required>
+
+            <button type="submit">Get Recommendation</button>
+        </form>
+        <a href="/logout" class="logout">Logout</a>
+    </div>
+</body>
+
+</html>

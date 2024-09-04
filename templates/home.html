@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #00ff8c;
+            padding: 15px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            justify-content: right;
+        }
+        
+        .navbar a {
+            color: #000000;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        
+        .navbar a:hover {
+            color: #1abc9c;
+        }
+        
+        .section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        
+        #src {
+            border: none;
+            border-radius: 50px;
+            background-color: #28a745;
+            color: whitesmoke;
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        #src:hover {
+            background-color: #218838;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .home {
+            background-image: url('/static/wallpaper4.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom;
+        }
+        
+        .home .welcome-section {
+            margin-bottom: 30px;
+        }
+        
+        .home h1 {
+            font-size: 3em;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+        
+        .home button {
+            background-color: #1abc9c;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .home button:hover {
+            background-color: #24a3cd;
+        }
+        
+        .about-me {
+            background: linear-gradient(#00ff4c, #ffffff);
+            padding: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #000;
+            border-radius: 10px;
+        }
+        
+        .about-me .image-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .about-me .image-section img {
+            width: 400px;
+            height: 400;
+            border-radius: 5px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-me .content-section {
+            flex: 2;
+            padding-left: 30px;
+            text-align: left;
+        }
+        
+        .about-me h1 {
+            color: rgb(0, 0, 0);
+        }
+        
+        .about-me p {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: rgb(0, 0, 0);
+        }
+        
+        .about-me .highlight {
+            color: #ff0000;
+            font-weight: bold;
+        }
+        
+        .project-description {
+            background: linear-gradient(#ffffff, #00ff4c);
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 2px solid #000;
+            border-radius: 10px;
+        }
+        
+        .project-description h1 {
+            font-size: 2em;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+        
+        .project-description .content p {
+            margin-bottom: 10px;
+            font-size: 1em;
+            line-height: 1.6;
+            text-align: left;
+            color: rgb(0, 0, 0);
+        }
+        
+        .project-description ul {
+            margin-bottom: 10px;
+            list-style-type: disc;
+            padding-left: 40px;
+            text-align: left;
+        }
+        
+        .project-description ul li {
+            margin-bottom: 5px;
+            font-size: 1em;
+            color: rgb(0, 0, 0);
+        }
+        
+        .contact {
+            background: linear-gradient(#ffffff, #00ff4c);
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .contact h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar a {
+                font-size: 16px;
+                margin: 0 10px;
+            }
+            .home h1,
+            .project-description h1,
+            .contact h1 {
+                font-size: 2em;
+            }
+            .home button {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+            .about-me p,
+            .project-description .content p,
+            .project-description ul li {
+                font-size: 1.5em;
+            }
+            .image-section img {
+                width: 200px;
+                height: 200px;
+            }
+            .about-me {
+                flex-direction: column;
+            }
+            .about-me .content-section {
+                padding-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#project-description">Project Description</a>
+        <a href="#about-me">About Me</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div id="home" class="section home">
+        <div class="welcome-section">
+            <h1>Welcome to Farmer World!</h1>
+            <a id="src" href="/project" class="btn-custom">GO FOR PREDICTION</a>
+        </div>
+    </div>
+
+    <div id="project-description" class="section project-description">
+        <h1>-: Project Description :-</h1>
+        <div class="content">
+            <p>A useful tool that helps farmers choose the best crops based on important soil and environmental factors is the Farmer Crop Suggestion System. This system groups and analyzes data using cluster algorithms, then recommends crops that are specifically
+                suited to the field circumstances.</p>
+            <p><b>Key Parameters:</b></p>
+            <p><b>Nitrogen (N):</b> Essential for plant growth, nitrogen levels in the soil influence the type of crops that can thrive.</p>
+            <p><b>pH Level:</b> The soil's pH affects nutrient availability. Certain crops grow better in acidic or alkaline soils.</p>
+            <p><b>Phosphorus (P):</b> Crucial for root development and energy transfer, phosphorus levels help determine the best crops for a given soil.</p>
+            <p><b>Potassium (K):</b> Vital for water regulation and enzyme activation, potassium impacts crop yield and quality.</p>
+            <p><b>Humidity:</b> The moisture in the air affects crop health and disease susceptibility.</p>
+            <p><b>Rainfall:</b> The amount of rain a region receives dictates the water needs of crops and influences planting decisions.</p>
+            <p><b>Temperature:</b> Temperature affects crop growth rates, germination, and overall yield potential.</p>
+            <P><b>Methodology:</b></P>
+            <p>The technology gathers information from the farmer's field on these characteristics and groups related data points using cluster algorithms like K-means. A set of crop varieties and associated environmental variables are represented by each
+                cluster. Through a comparison of the farmer's unique conditions with these clusters, the algorithm offers customized crop recommendations.
+            </p>
+            <p><b>Benefits:</b></p>
+            <ul>
+                <li><b>Optimized Crop Selection:</b> Farmers receive recommendations tailored to their land's unique characteristics, leading to higher yields and better crop quality.</li>
+                <li><b>Resource Efficiency:</b> By choosing crops suited to existing conditions, farmers can reduce the need for fertilizers and irrigation, promoting sustainable farming practices.</li>
+                <li><b>Data-Driven Decisions:</b> The system's use of advanced clustering algorithms ensures that recommendations are based on solid data analysis, increasing the likelihood of successful crop production.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="about-me" class="section about-me">
+        <div class="image-section">
+            <img src="/static/profile-image.jpg" alt="Your Photo">
+        </div>
+        <div class="content-section">
+            <h1>-:About Me:-</h1>
+            <p>Hi there! My name is Kumar Vivek Santosh, and I attend Arya College of Engineering in Jaipur. I am an enthusiastic student studying computer science and engineering, or CSE. Deep interest in Machine Learning and Data Science, fields where
+                I think technology can have transformative effects across a range of sectors, has driven my academic journey. I've dedicated my academic career to learning the nuances of algorithms, data analysis, and predictive modeling. I'm always looking
+                to sharpen my technical abilities and increase my knowledge base.</p>
+            <p>I am currently interning at Upflairs, a progressive digital business that focuses in software development and creative solutions, and I am learning a great deal here. I have had the chance to work on projects that demand both creative problem-solving
+                and a strong analytical approach thanks to this internship, which has allowed me to immerse myself in real-world applications of machine learning and data science. Here at Upflairs, I work on creating intelligent algorithms that can sift
+                through massive datasets and produce insights that organizations can use to make wise decisions.
+            </p>
+            <p>I now have more technical know-how, but more importantly, this experience has improved my teamwork skills. I am thrilled about the opportunities that lay ahead as I continue to develop and make significant contributions to technical developments,
+                since it has reinforced my enthusiasm for these cutting-edge fields.
+            </p>
+        </div>
+    </div>
+
+    <div id="contact" class="section contact">
+        <h1>Contact Me:-</h1>
+        <div>
+            <p>Have questions or want to collaborate? Reach out to me:</p>
+            <ul>
+                <li><strong>Email:</strong> kumarviveksantosh663@gmail.com</li>
+                <li><strong>Phone:</strong> +91 7634096007</li>
+                <li><strong>Address:</strong> RIICO Industrial Area, Kukas, Jaipur</li>
+                <li><strong>GitHub:</strong>
+                    <a href="https://github.com/Kumarvivek663?tab=repositories" target="_blank">
+                        https://github.com/Kumarvivek663?tab=repositories
+                    </a>
+                </li>
+                <li><strong>LinkedIn:</strong>
+                    <a href="https://www.linkedin.com/in/kumar-vivek-santosh-a81086295/" target="_blank">
+                        https://www.linkedin.com/in/kumar-vivek-santosh-a81086295/
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
