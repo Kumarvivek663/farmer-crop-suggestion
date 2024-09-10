@@ -79,7 +79,7 @@ def send_feedback():
     smtp_server = 'smtp.gmail.com'  
     smtp_port = 587
     smtp_user = 'kumarviveksantosh663@gmail.com'  
-    smtp_password = 'txwp ihgz xkgx kkgv'  
+    smtp_password = 'ADD_YOUR_KEY'  
     to_email = 'aryavivek663@gmail.com'  
 
    
